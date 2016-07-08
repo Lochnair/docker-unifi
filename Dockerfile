@@ -13,7 +13,8 @@ RUN apk add \
     ca-certificates \
     mongodb \
     libssl1.0 \
-    unzip
+    unzip \
+    wget
 
 RUN update-ca-certificates
 
