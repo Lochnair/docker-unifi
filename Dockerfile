@@ -15,6 +15,8 @@ RUN apk add \
     libssl1.0 \
     unzip
 
+RUN update-ca-certificates
+
 # Download Unifi
 RUN mkdir /app
 WORKDIR /app
