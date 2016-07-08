@@ -12,6 +12,7 @@ RUN apk add \
     --update \
     ca-certificates \
     mongodb \
+    libssl1.0 \
     unzip
 
 # Download Unifi
