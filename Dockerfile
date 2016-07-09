@@ -21,9 +21,9 @@ RUN update-ca-certificates
 # Download Unifi
 RUN mkdir /app
 WORKDIR /app
-RUN wget https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip; \
-    unzip UniFi.unix.zip; \
-    rm -v uniFi.unix.zip
+RUN wget https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
+RUN unzip UniFi.unix.zip
+RUN rm -v uniFi.unix.zip
 
 # Uninstall unzip
 RUN apk remove \
