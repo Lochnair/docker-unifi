@@ -25,7 +25,8 @@ RUN wget https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
 RUN unzip UniFi.unix.zip
 RUN rm -v UniFi.unix.zip
 
-# Uninstall unzip
 RUN apk remove \
     --no-cache \
+    libssl1.0
     unzip
+    wget
