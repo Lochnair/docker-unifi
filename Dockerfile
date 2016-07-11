@@ -27,6 +27,6 @@ RUN rm -v UniFi.unix.zip
 
 RUN apk del \
     --no-cache \
-    libssl1.0
-    unzip
+    libssl1.0 \
+    unzip \
     wget
