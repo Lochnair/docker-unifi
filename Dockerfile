@@ -20,9 +20,6 @@ apk add \
 --update \
 mongodb && \
 
-# Change user home to UniFi installation
-usermod -d /app/UniFi cont
-
 VOLUME /config
 
 COPY root/ /
