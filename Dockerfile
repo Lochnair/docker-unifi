@@ -27,6 +27,10 @@ RUN \
 # Fix symlink
 ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
 
+# Remove unneeded MongoDB executables (saves ~82M)
+# UniFi only requires the mongo daemon.
+rm /usr/bin/{mongo,mongos,mongoperf,mongosniff}
+
 VOLUME /config
 
 COPY root/ /
