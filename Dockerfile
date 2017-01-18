@@ -12,9 +12,6 @@ ADD https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip /tmp/
 RUN unzip /tmp/UniFi.unix.zip -d /app
 RUN rm /tmp/UniFi.unix.zip
 
-# Add symlink to MongoDB
-RUN ln -s /usr/bin/mongod /app/UniFi/bin/mongod
-
 ## Install dependencies from the testing repository
 RUN apk add \
     --no-cache \
