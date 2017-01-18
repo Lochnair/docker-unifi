@@ -29,7 +29,10 @@ ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
 
 # Remove unneeded MongoDB executables (saves ~82M)
 # UniFi only requires the mongo daemon.
-rm /usr/bin/{mongo,mongos,mongoperf,mongosniff}
+rm /usr/bin/mongo && \
+rm /usr/bin/mongoperf && \
+rm /usr/bin/mongos && \
+rm /usr/bin/mongosniff
 
 VOLUME /config
 
