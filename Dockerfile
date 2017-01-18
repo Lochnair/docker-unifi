@@ -9,18 +9,19 @@ ENV UNIFI_VERSION 5.4.9
 
 # Download Unifi
 ADD https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip /tmp/
-RUN unzip /tmp/UniFi.unix.zip -d /app
-RUN rm /tmp/UniFi.unix.zip
+RUN \
+unzip /tmp/UniFi.unix.zip -d /app && \
+rm /tmp/UniFi.unix.zip && \
 
 ## Install dependencies from the testing repository
-RUN apk add \
-    --no-cache \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    --update \
-    mongodb
+apk add \
+--no-cache \
+--repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+--update \
+mongodb && \
 
 # Change user home to UniFi installation
-RUN usermod -d /app/UniFi cont
+usermod -d /app/UniFi cont
 
 VOLUME /config
 
