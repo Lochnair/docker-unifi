@@ -23,3 +23,5 @@ RUN apk add \
 RUN usermod -d /app/UniFi cont
 
 VOLUME /config
+
+COPY root/ /
