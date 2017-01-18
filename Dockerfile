@@ -18,7 +18,7 @@ apk add \
 --no-cache \
 --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 --update \
-mongodb && \
+mongodb
 
 VOLUME /config
 
