@@ -9,19 +9,23 @@ ENV UNIFI_VERSION 5.4.9
 
 # Download Unifi
 RUN curl -L -o /tmp/UniFi.unix.zip https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
+
 RUN \
+# Extract UniFi archive
 unzip /tmp/UniFi.unix.zip -d /app && \
-rm /tmp/UniFi.unix.zip && \
+rm /tmp/UniFi.unix.zip
 
-# Fix symlink
-ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
-
+RUN \
 ## Install dependencies from the testing repository
 apk add \
 --no-cache \
 --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 --update \
 mongodb
+
+RUN \
+# Fix symlink
+ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
 
 VOLUME /config
 
