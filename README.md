@@ -2,6 +2,8 @@
 Unifi image for Docker, based on Alpine Linux.
 
 ## Usage
+
+```bash
 docker create \
   --name=unifi \
   -v <path to data>:/config \
@@ -13,3 +15,4 @@ docker create \
   -p 8843:8843 \
   -p 8880:8880 \
   lochnair/unifi
+```
