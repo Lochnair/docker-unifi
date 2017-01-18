@@ -13,6 +13,9 @@ RUN \
 unzip /tmp/UniFi.unix.zip -d /app && \
 rm /tmp/UniFi.unix.zip && \
 
+# Fix symlink
+ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
+
 ## Install dependencies from the testing repository
 apk add \
 --no-cache \
