@@ -3,13 +3,11 @@
 mkdir -p /config/{data,logs,run}
 
 
-[[ -L /usr/lib/unifi/data && ! /usr/lib/unifi/data -ef /config/data ]] && unlink /usr/lib/unifi/data
-[[ -L /usr/lib/unifi/logs && ! /usr/lib/unifi/logs -ef /config/logs ]] && unlink /usr/lib/unifi/logs
-[[ -L /usr/lib/unifi/run && ! /usr/lib/unifi/run -ef /config/run ]] && unlink /usr/lib/unifi/run
+[[ -L /app/UniFi/data && ! /app/UniFi/data -ef /config/data ]] && unlink /app/UniFi/data
+[[ -L /app/UniFi/logs && ! /app/UniFi/logs -ef /config/logs ]] && unlink /app/UniFi/logs
+[[ -L /app/UniFi/run && ! /app/UniFi/run -ef /config/run ]] && unlink /app/UniFi/run
 
 
-[[ ! -L /usr/lib/unifi/data ]] && ln -s /config/data /usr/lib/unifi/data
-[[ ! -L /usr/lib/unifi/logs ]] && ln -s /config/logs /usr/lib/unifi/logs
-[[ ! -L /usr/lib/unifi/run ]] && ln -s /config/run /usr/lib/unifi/run
-
-chown -R cont:cont /config /usr/lib/unifi
+[[ ! -L /app/UniFi/data ]] && ln -s /config/data /app/UniFi/data
+[[ ! -L /app/UniFi/logs ]] && ln -s /config/logs /app/UniFi/logs
+[[ ! -L /app/UniFi/run ]] && ln -s /config/run /app/UniFi/run
