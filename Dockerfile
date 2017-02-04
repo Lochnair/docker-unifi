@@ -1,4 +1,4 @@
-FROM lochnair/base:alpine-java
+FROM lochnair/base:alpine-jre8
 MAINTAINER Lochnair <me@lochnair.net>
 LABEL Description="Docker image for Unifi (Alpine)"
 
