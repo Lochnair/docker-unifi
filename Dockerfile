@@ -8,7 +8,7 @@ EXPOSE 8080 8081 8443 8843 8880
 ENV UNIFI_VERSION 5.4.9
 
 # Download Unifi
-RUN curl -L -o /tmp/UniFi.unix.zip https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
+RUN curl -f -L -o /tmp/UniFi.unix.zip https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
 
 RUN \
 # Extract UniFi archive
