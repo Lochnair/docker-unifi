@@ -32,7 +32,6 @@ ln -sf /usr/bin/mongod /app/UniFi/bin/mongod && \
 rm /usr/bin/mongo && \
 rm /usr/bin/mongoperf && \
 rm /usr/bin/mongos && \
-rm /usr/bin/mongosniff && \
 
 # Remove unnecessary native libraries
 rm -rf /app/UniFi/lib/native/{Mac,Windows} && \
