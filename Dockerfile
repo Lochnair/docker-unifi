@@ -5,7 +5,7 @@ LABEL Description="Docker image for Unifi (Alpine)"
 EXPOSE 8080 8081 8443 8843 8880
 
 ## Environment variables
-ENV UNIFI_VERSION 5.4.14
+ENV UNIFI_VERSION 5.4.16
 
 # Download Unifi
 RUN curl -f -L -o /tmp/UniFi.unix.zip https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
@@ -16,10 +16,11 @@ unzip /tmp/UniFi.unix.zip -d /app && \
 rm /tmp/UniFi.unix.zip
 
 RUN \
-## Install dependencies from the testing repository
+## Install dependencies from the Edge repository
 apk add \
 --no-cache \
---repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+--repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
 --update \
 mongodb
 
