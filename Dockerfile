@@ -16,11 +16,9 @@ unzip /tmp/UniFi.unix.zip -d /app && \
 rm /tmp/UniFi.unix.zip
 
 RUN \
-## Install dependencies from the Edge repository
+## Install dependencies
 apk add \
 --no-cache \
---repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
---repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
 --update \
 mongodb
 
