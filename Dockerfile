@@ -5,7 +5,7 @@ LABEL Description="Docker image for Unifi (Alpine)"
 EXPOSE 8080 8081 8443 8843 8880
 
 ## Environment variables
-ENV UNIFI_VERSION 5.4.16
+ENV UNIFI_VERSION 5.5.20
 
 # Download Unifi
 RUN curl -f -L -o /tmp/UniFi.unix.zip https://dl.ubnt.com/unifi/${UNIFI_VERSION}/UniFi.unix.zip
